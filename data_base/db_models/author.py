@@ -20,4 +20,4 @@ class Author(Base):
     patronymic = Column(String(32), nullable=True)
     birth_date = Column(DATE, nullable=True)
 
-    author = relationship(Book, backref='author', cascade="all, delete")
+    author = relationship(Book,  backref='author', cascade="all, delete")
