@@ -1,7 +1,5 @@
-import sqlalchemy
 from data_base.db_config import DataBaseConnect
 from data_base.db_models.author import Author
-import asyncio
 from sqlalchemy import insert
 
 
@@ -15,3 +13,5 @@ class Author_DAL:
             async with session.begin():
                 stmt = (insert(Author).values(**AddAuthor))
                 await session.execute(stmt)
+
+

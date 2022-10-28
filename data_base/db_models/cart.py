@@ -1,12 +1,4 @@
-from sqlalchemy import (
-    Column,
-    Integer,
-    String,
-    Boolean,
-    DATE,
-ForeignKey
-)
-from sqlalchemy.orm import relationship
+from sqlalchemy import ( Column,Integer, DATE, ForeignKey)
 from data_base.db_config import Base
 
 

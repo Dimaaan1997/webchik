@@ -1,14 +1,8 @@
-from sqlalchemy import (
-    Column,
-    Integer,
-    String,
-    Boolean,
-    DATE,
-ForeignKey
-)
+from sqlalchemy import (Column, Integer, String)
 from sqlalchemy.orm import relationship
 from data_base.db_config import Base
 from data_base.db_models.cart import Cart
+
 
 class Client(Base):
     __tablename__ = 'client'

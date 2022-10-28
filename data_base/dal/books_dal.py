@@ -1,16 +1,7 @@
-import asyncio
 from data_base.db_config import DataBaseConnect
 from data_base.db_models.book import Book
 from data_base.db_models.author import Author
 from sqlalchemy import insert, select
-
-
-# name = Column(String(32), nullable=True)
-# year = Column(Integer, nullable=True)
-# price = Column(Integer, nullable=True)
-# id_author = Column(Integer, ForeignKey('author.id_author', ondelete='CASCADE'))
-
-test_book = {'name': 'Анна Каренина', 'year': 1887, 'price': 300, 'id_author': 3}
 
 
 class Book_DAL:
@@ -53,6 +44,3 @@ class Book_DAL:
                        Book.price).join(Author)
             )
             return query.all()
-
-a = Book_DAL()
-asyncio.run(a.add_book(test_book))

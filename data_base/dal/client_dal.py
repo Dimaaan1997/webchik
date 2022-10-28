@@ -1,7 +1,4 @@
-import sqlalchemy
-from data_base.db_config import DataBaseConnect
 from data_base.db_models.client import Client
-import asyncio
 from data_base.db_config import DataBaseConnect
 from sqlalchemy import insert, select
 

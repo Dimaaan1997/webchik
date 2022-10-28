@@ -25,7 +25,7 @@ class DataBaseConnect:
     def __new__(cls, *args, **kwargs):
         if not cls.__instance__:
             engine = create_async_engine(connect_route, future=True,
-                                         echo=False, max_overflow=100)
+                                         echo=False)
             async_session_fabric = sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
             cls.__instance__ = async_session_fabric
 
