@@ -1,3 +1,7 @@
-# amount = Column(Integer, nullable=True)
-# id_book = Column(Integer, ForeignKey('book.id_book', ondelete='CASCADE'))
-# id_cart = Column(Integer, ForeignKey('cart.id_cart', ondelete='CASCADE'))
+from pydantic import BaseModel
+
+
+class AddPurchase(BaseModel):
+    amount: int
+    id_book: int
+    id_cart: int
