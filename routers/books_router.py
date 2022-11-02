@@ -12,7 +12,7 @@ async def add_book(book: AddBook):
     await dal.add_book(book.dict())
 
 
-@router.get('/search')
+@book_router.get('/search')
 async def search_book(name: SearchBook):
     dal = Book_DAL()
     book = await dal.search_book_by_name(name.name)
@@ -22,7 +22,7 @@ async def search_book(name: SearchBook):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
 
 
-@router.get('/get/{id_book}')
+@book_router.get('/get')
 async def get_book(id_book: int):
     dal = Book_DAL()
     book = await dal.get_book_info(id_book)
@@ -32,7 +32,7 @@ async def get_book(id_book: int):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
 
 
-@router.get('/all')
+@book_router.get('/all')
 async def get_book():
     dal = Book_DAL()
     books = await dal.get_all_books()

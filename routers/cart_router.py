@@ -12,7 +12,7 @@ async def add_cart(id_client: int):
     await dal.add_cart(id_client=id_client)
 
 
-@cart_router.post('/cart')
+@cart_router.post('/add')
 async def get_cart(id_cart: SearchCart):
     dal = Cart_DAL()
     cart = await dal.get_cart_by_id(id_cart.id)

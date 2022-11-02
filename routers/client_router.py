@@ -12,7 +12,7 @@ async def add_client(client: AddClient):
     await dal.add_client(client.dict())
 
 
-@router.get('/search')
+@client_router.get('/search')
 async def search_client(client: SearchClient):
     dal = Client_DAL()
     client = await dal.search_client(client.name, client.phone_number)

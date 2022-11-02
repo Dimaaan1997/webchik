@@ -15,7 +15,7 @@ class Book_DAL:
                 stmt = (insert(Book).values(**AddBook))
                 await session.execute(stmt)
 
-    async def search_book_by_name(self, book_name):
+    async def search_book_by_name(self, author):
         async with self.session_fabric() as session:
             query = await session.execute(
                 select(Author.surname,
